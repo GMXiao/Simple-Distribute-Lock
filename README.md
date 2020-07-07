@@ -1,5 +1,5 @@
 # Simple-Distribute-Lock
-##本实验要求设计一个简单的一致性系统，并满足以下条件:
+## 本实验要求设计一个简单的一致性系统，并满足以下条件:
 1.	一个 leader server 和多个 follower servers;
 2.	每个 follower server 都有一个复制的映射，该映射由 leader server 处理；
 3.	映射的 key 是分布式锁的名称，映射的值是分布式锁的 Client ID;
