@@ -14,4 +14,8 @@
   b) 当 follower server 收到一个 request propose 时，修改其本地映射，检查请求是否等待；如果请求未处理，向 client 发送反馈。
 8.	在这个系统中，所有 clients 提供抢占/释放/检查分布式锁的接口；
 9.	定义目标服务器的 IP 地址，基于用户信息生成 Client ID 信息。
+## 架构设计
+一台Leader服务器，多台Follower服务器，Leader和每台Follower之间进行连接，当有锁抢占、释放等操作时会通知每个Follower，Leader拥有主要的一个Lock Map用来管理系统中的锁。Follower可以向Leader请求抢占锁、释放锁，同时自己也有一份Leader端Lock Map的副本。
+
+![分布式锁架构](https://github.com/GMXiao/Simple-Distribute-Lock/blob/master/pic/jiagou.png "分布式锁架构")
 
